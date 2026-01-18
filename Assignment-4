@@ -1,0 +1,30 @@
+# Task 1: Read a file and handle errors
+
+try:
+    file = open("sample.txt", "r")
+    print("File content:\n")
+    for line in file:
+        print(line.strip())
+    file.close()
+
+except FileNotFoundError:
+    print("Error: sample.txt file does not exist.")
+# Task 2: Write and append data to a file
+
+user_input = input("Enter some data: ")
+
+# Write data
+file = open("output.txt", "w")
+file.write(user_input + "\n")
+file.close()
+
+# Append data
+file = open("output.txt", "a")
+file.write("This is appended data.\n")
+file.close()
+
+# Read and display final content
+file = open("output.txt", "r")
+print("\nFinal content of output.txt:")
+print(file.read())
+file.close()
